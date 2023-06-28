@@ -31,7 +31,6 @@ Follow these steps to install and set up the Algolia_test project:
 	```bash
 	docker-compose up
 
-
 4. Access the Airflow web UI in your browser at `http://localhost:8080`.
 - Use the following credentials to log in:
   - User: airflow
