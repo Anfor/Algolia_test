@@ -18,7 +18,7 @@ import algolia_configuration as configuration
 # Explains start_date and end_date
 # https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dag-run.html#data-interval
 # https://airflow.apache.org/docs/apache-airflow/1.10.13/scheduler.html
-# In order to launch manually in Airflow we need to comment end_date
+# In order to trigger manually in Airflow we need to comment end_date
 dag = DAG(
     'algolia_data_pipeline',
     description='A simple data pipeline DAG',

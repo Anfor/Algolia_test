@@ -9,8 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 RUN apt-get -y update \
  && apt-get -y install python-pip libpq-dev postgresql-client python3-dev python3-distutils python3-apt openjdk-11-jdk
 
-RUN pip install --no-cache-dir --upgrade pip \
-  && pip install --no-cache-dir psycopg2 pytest findspark
+
 
 # Set Java home environment variable
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
@@ -26,3 +25,8 @@ RUN curl -O https://downloads.apache.org/spark/spark-${SPARK_VERSION}/spark-${SP
 # Set Spark home environment variable
 ENV SPARK_HOME=/opt/spark
 ENV PATH=$PATH:$SPARK_HOME/bin
+
+USER airflow
+
+RUN pip install --no-cache-dir --upgrade pip \
+  && pip install --no-cache-dir psycopg2 pytest findspark moto
